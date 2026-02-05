@@ -4,40 +4,31 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import Card from "../common/card";
 
 import "./styles/works.css";
+import INFO from "../../data/user";
 
 const Works = () => {
 	return (
-		<div className="works">
+		<div className="works-list">
 			<Card
 				icon={faBriefcase}
-				title="Work"
-				body={
+				title="Work Experience"
+				body = {
 					<div className="works-body">
-						<div className="work">
-							<img
-								src="./facebook.png"
-								alt="facebook"
-								className="work-image"
-							/>
-							<div className="work-title">Facebook</div>
-							<div className="work-subtitle">
-								Software Engineer
-							</div>
-							<div className="work-duration">2019 - Present</div>
-						</div>
-
-						<div className="work">
-							<img
-								src="./twitter.png"
-								alt="twitter"
-								className="work-image"
-							/>
-							<div className="work-title">Twitter</div>
-							<div className="work-subtitle">
-								Software Engineer
-							</div>
-							<div className="work-duration">2019 - Present</div>
-						</div>
+						{INFO.works && INFO.works.map(
+							(work, id) => (
+								<div className="work" onClick={() => window.open(work.url, '_blank')}>
+									<img
+										height={30}
+										src={work.logo}
+										alt={`${id}-work`}
+										className="work-image"
+									/>
+									<div className="work-title">{work.title}</div>
+									<div className="work-subtitle">{work.description}</div>
+									<div className="work-duration">{work.timeframe}</div>
+								</div>
+							)
+						)}
 					</div>
 				}
 			/>

@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Project from "./project";
 
 import INFO from "../../data/user";
 
 import "./styles/allProjects.css";
+import ProjectModal from "./projectModal";
 
-const AllProjects = () => {
+const AllProjects = ({ maxProjects }) => {
+	const [selectedProject, setSelectedProject] = useState(null);
+
+	let projects = INFO.projects;
+	if (maxProjects !== undefined)
+		projects = projects.slice(0, maxProjects);
+
 	return (
 		<div className="all-projects-container">
-			{INFO.projects.map((project, index) => (
-				<div className="all-projects-project" key={index}>
+			{projects.map((project, index) => (
+				<div
+					className="all-projects-project"
+					key={index}
+					onClick={() => setSelectedProject(project)}
+				>
 					<Project
 						logo={project.logo}
 						title={project.title}
@@ -20,6 +31,8 @@ const AllProjects = () => {
 					/>
 				</div>
 			))}
+
+			{selectedProject && (<ProjectModal selected={selectedProject} setSelected={setSelectedProject}/>)}
 		</div>
 	);
 };
