@@ -18,7 +18,7 @@ const ProjectModal = ({selected, setSelected}) => {
                     &times;
                 </span>
                 <h3>{selected.title}</h3>
-                <div>{selected.description}</div>
+                <div>{selected.body}</div>
             </div>
         </div>
 	);

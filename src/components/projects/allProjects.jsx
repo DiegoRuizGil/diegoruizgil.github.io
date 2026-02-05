@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Project from "./project";
 
 import INFO from "../../data/user";
+import myProjects from "../../data/projects";
 
 import "./styles/allProjects.css";
 import ProjectModal from "./projectModal";
@@ -10,7 +11,7 @@ import ProjectModal from "./projectModal";
 const AllProjects = ({ maxProjects }) => {
 	const [selectedProject, setSelectedProject] = useState(null);
 
-	let projects = INFO.projects;
+	let projects = myProjects;
 	if (maxProjects !== undefined)
 		projects = projects.slice(0, maxProjects);
 
@@ -20,14 +21,14 @@ const AllProjects = ({ maxProjects }) => {
 				<div
 					className="all-projects-project"
 					key={index}
-					onClick={() => setSelectedProject(project)}
+					onClick={() => setSelectedProject(project())}
 				>
 					<Project
-						logo={project.logo}
-						title={project.title}
-						description={project.description}
-						linkText={project.linkText}
-						link={project.link}
+						logo={project().logo}
+						title={project().title}
+						description={project().description}
+						linkText={project().linkText}
+						link={project().link}
 					/>
 				</div>
 			))}
