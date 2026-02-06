@@ -13,7 +13,7 @@ const INFO = {
 	},
 
 	homepage: {
-		title: "Game Developer, specialized in Unity",
+		title: "Software & Game Developer, specialized in Unity and C#",
 		description:
 			"I’m a C#/.NET Software Engineer and Game Developer focused on building clean, scalable, and maintainable systems.I specialize in Unity development, where I design gameplay systems, tools, and editor extensions that improve workflows and productivity. I care deeply about architecture, testing, and code quality, applying principles like Clean Architecture, SOLID, DDD, and TDD to create reliable and extensible solutions.",
 	},
