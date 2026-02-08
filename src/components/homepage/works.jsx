@@ -11,7 +11,7 @@ const Works = () => {
 		<div className="works-list">
 			<Card
 				icon={faBriefcase}
-				title="Work Experience"
+				title="Work experience"
 				body = {
 					<div className="works-body">
 						{INFO.works && INFO.works.map(
@@ -23,9 +23,11 @@ const Works = () => {
 										alt={`${id}-work`}
 										className="work-image"
 									/>
-									<div className="work-title">{work.title}</div>
+									<div className="work-header">
+										<div className="work-title">{work.title}</div>
+										<div className="work-duration">| {work.timeframe}</div>
+									</div>
 									<div className="work-subtitle">{work.description}</div>
-									<div className="work-duration">{work.timeframe}</div>
 								</div>
 							)
 						)}
