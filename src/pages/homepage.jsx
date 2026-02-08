@@ -78,6 +78,7 @@ const Homepage = () => {
 				/>
 			</Helmet>
 
+			<p>esto es una prueba para ver si se actualiza el deploy</p>
 			<div className="page-content">
 				<NavBar active="home" />
 				<div className="content-wrapper">
