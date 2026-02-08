@@ -37,8 +37,8 @@
 }
 
 .homepage-image-container {
-	width: 370px;
-	height: 370px;
+	width: 320px;
+	height: 320px;
 }
 
 .homepage-image-wrapper {
@@ -75,7 +75,7 @@
 
 .homepage-projects {
 	flex-basis: 300px;
-	padding-top: 40px;
+	padding-top: 100px;
 }
 
 .homepage-articles {
