@@ -7,6 +7,7 @@ import {
 	faGithub,
 	faItchIo,
 	faLinkedin,
+	faBluesky
 } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../components/common/logo";
@@ -124,6 +125,16 @@ const Homepage = () => {
 								/>
 							</a>
 							<a
+								href={INFO.socials.linkedin}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FontAwesomeIcon
+									icon={faLinkedin}
+									className="homepage-social-icon"
+								/>
+							</a>
+							<a
 								href={INFO.socials.itchio}
 								target="_blank"
 								rel="noreferrer"
@@ -134,12 +145,12 @@ const Homepage = () => {
 								/>
 							</a>
 							<a
-								href={INFO.socials.linkedin}
+								href={INFO.socials.bsky}
 								target="_blank"
 								rel="noreferrer"
 							>
 								<FontAwesomeIcon
-									icon={faLinkedin}
+									icon={faBluesky}
 									className="homepage-social-icon"
 								/>
 							</a>

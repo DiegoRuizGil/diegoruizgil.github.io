@@ -10,6 +10,7 @@ const INFO = {
 		github: "https://github.com/DiegoRuizGil",
 		linkedin: "https://www.linkedin.com/in/diego-ruiz-gil/",
 		itchio: "https://diegorg64.itch.io/",
+		bsky: "https://bsky.app/profile/diegorg64.bsky.social"
 	},
 
 	homepage: {
