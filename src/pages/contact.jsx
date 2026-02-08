@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 
+import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import NavBar from "../components/common/navBar";
 import Footer from "../components/common/footer";
 import Logo from "../components/common/logo";
@@ -57,6 +60,15 @@ const Contact = () => {
 							I'm always open to opportunities, ideas, and conversations.
 						</div>
 					</div>
+
+					<a
+						href="./CV - DiegoRuizGil - Gamedev.pdf"
+						download
+						className="cv-button"
+					>
+						<FontAwesomeIcon icon={faFilePdf} style={{ marginRight: "0.5rem" }} />
+						Download CV
+					</a>
 
 					<div className="socials-container">
 						<div className="contact-socials">
