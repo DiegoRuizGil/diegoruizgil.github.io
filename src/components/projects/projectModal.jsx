@@ -64,7 +64,7 @@ const ProjectModal = ({selected, setSelected}) => {
                     <div className="modal-link">
                         <div className="modal-link-icon">
                                 <FontAwesomeIcon icon={faLink} />
-                            </div>
+                        </div>
                         <div className="modal-link-text">
                             <a
                                 href={selected.itchio}

@@ -27,8 +27,7 @@ const AllProjects = ({ maxProjects }) => {
 						logo={project().logo}
 						title={project().title}
 						description={project().description}
-						linkText={project().linkText}
-						link={project().link}
+						banner={project().banner}
 					/>
 				</div>
 			))}
