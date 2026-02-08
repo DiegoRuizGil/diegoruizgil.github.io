@@ -39,21 +39,20 @@ const Projects = () => {
 					</div>
 					<div className="projects-container">
 						<div className="title projects-title">
-							Things I’ve made trying to put my dent in the
-							universe.
+							Things I’ve built exploring game development and software architecture.
 						</div>
 
 						<div className="subtitle projects-subtitle">
-							I've worked on a variety of projects over the years
-							and I'm proud of the progress I've made. Many of
-							these projects are open-source and available for
-							others to explore and contribute to. If you're
-							interested in any of the projects I've worked on,
-							please feel free to check out the code and suggest
-							any improvements or enhancements you might have in
-							mind. Collaborating with others is a great way to
-							learn and grow, and I'm always open to new ideas and
-							feedback.
+							<p>
+								Here you can find a selection of projects I’ve worked on,
+								mainly focused on Unity and C#, where I explore gameplay systems,
+								tools, and clean, maintainable architectures.
+							</p>
+							<p>
+								Some of these projects are more technically oriented, while others are small playable experiences.
+								For additional prototypes, game jam entries, and short experimental games, you can check out my <a href="https://diegorg64.itch.io/" target="_blank" rel="noreferrer">itch.io page</a>,
+								where I regularly share smaller projects that didn’t make it into the main portfolio.
+							</p>
 						</div>
 
 						<div className="projects-list">
