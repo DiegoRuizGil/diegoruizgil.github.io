@@ -210,10 +210,10 @@ function global_variables() {
                 <div className="modal-section">📌 About</div>
                 <div className="modal-content-text">
                     <p>
-                        <b>Unity Global Variables</b> is a system for managing global variables in Unity using Scriptable Objects, enabling seamless access and modification across scripts and scenes directly from the Unity Editor. Inspired by Ryan Hipple’s talk <a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk">Unite Austin 2017 - Game Architecture with Scriptable Objects</a>.
+                        <b>Unity Global Variables</b> is a system for managing global variables in Unity using Scriptable Objects, enabling seamless access and modification across scripts and scenes directly from the Unity Editor. Inspired by Ryan Hipple’s talk <a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk" target="_blank" rel="noreferrer"> Unite Austin 2017 - Game Architecture with Scriptable Objects</a>.
                     </p>
                     <p>
-                        For more details on usage, check the README in the <a href="https://github.com/DiegoRuizGil/unity-global-variables">GitHub repository</a>.
+                        For more details on usage, check the README in the <a href="https://github.com/DiegoRuizGil/unity-global-variables" target="_blank" rel="noreferrer">GitHub repository</a>.
                     </p>
                 </div>
 
@@ -259,18 +259,18 @@ function so_game_events() {
         description:
             "Event system for communication between objects in a Unity scene, based on the use of Scriptable Objects.",
         logo: "https://worldvectorlogo.com/logos/unity-69.svg",
-        github: "https://github.com/DiegoRuizGil/unity-global-variables",
-        itchio: "https://diegorg64.itch.io/unity-global-variables",
+        github: "https://github.com/DiegoRuizGil/so-game-events",
+        itchio: "https://diegorg64.itch.io/so-game-events-architecture",
         banner: "./projects/so-game-events.png",
         body: (
             <React.Fragment>
                 <div className="modal-section">📌 About</div>
                 <div className="modal-content-text">
                     <p>
-                        This project implements an event system for communication between objects in a Unity scene using Scriptable Objects, allowing for decoupled interactions and reducing class dependencies. Inspired by Ryan Hipple's talk<a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk">Unite Austin 2017 - Game Architecture with Scriptable Objects</a>, this system provides an efficient way to trigger events and manage game logic in a clean and modular way.
+                        This project implements an event system for communication between objects in a Unity scene using Scriptable Objects, allowing for decoupled interactions and reducing class dependencies. Inspired by Ryan Hipple's talk <a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk" target="_blank" rel="noreferrer">Unite Austin 2017 - Game Architecture with Scriptable Objects</a>, this system provides an efficient way to trigger events and manage game logic in a clean and modular way.
                     </p>
                     <p>
-                        For more information on how to use the SO Game Event Architecture, refer to the README in the <a href="https://github.com/DiegoRuizGil/so-game-events">GitHub project</a>.
+                        For more information on how to use the SO Game Event Architecture, refer to the README in the <a href="https://github.com/DiegoRuizGil/so-game-events" target="_blank" rel="noreferrer">GitHub project</a>.
                     </p>
                 </div>
 
