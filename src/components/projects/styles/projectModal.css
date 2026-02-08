@@ -34,6 +34,10 @@
 	padding-bottom: 5rem;
 }
 
+.modal-content p {
+	margin-top: 10px;
+}
+
 .modal-close-wrapper {
 	position: sticky;
 	top: 0;

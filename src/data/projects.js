@@ -8,10 +8,52 @@ function cookie_clicker() {
         logo: "https://worldvectorlogo.com/logos/unity-69.svg",
         github: "https://github.com/DiegoRuizGil/cookie-clicker-clone.git",
         itchio: "https://diegorg64.itch.io/cookie-clicker-clone",
-        banner: "./cookie.png",
+        banner: "./projects/cookie.png",
         body: (
             <React.Fragment>
-                <div>Esto es una prueba para el body de un proyecto</div>
+                <div className="modal-section">📌 About</div>
+                <div className="modal-content-text">
+                    <p><b>Cookie Clicker Clone</b> is a Unity project that recreates the core mechanics of the classic incremental game <a href="https://cookieclicker.com/" target="_blank" rel="noreferrer">Cookie Clicker</a>, with a strong focus on <b>software architecture, code quality and testability</b> rather than visual complexity.</p>
+                    <p>The goal of the project is to explore how concepts such as <b>Clean Architecture, MVC and Test-Driven Development (TDD)</b> can be applied to a game developed in Unity, keeping the game logic completely decoupled from the engine and UI layer.</p>
+                </div>
+
+                <div className="modal-section">🚀 Main features</div>
+                <div className="modal-subsection">🍪 Core Incremental Gameplay</div>
+                <div className="modal-content-text">Click the main cookie to generate cookies and progress through an ever-growing production system.</div>
+                <div className="modal-subsection">🏭 Passive Production System</div>
+                <div className="modal-content-text">Purchase buildings that automatically generate cookies over time, increasing your Cookies Per Second (CPS).</div>
+                <div className="modal-subsection">🛒 Buildings & Upgrades Shop</div>
+                <div className="modal-content-text">Buy buildings with dynamic pricing and unlock upgrades that enhance production and progression.</div>
+                <div className="modal-subsection">🔓 Progressive Unlock System</div>
+                <div className="modal-content-text">New buildings and upgrades become available based on specific progression conditions.</div>
+                <div className="modal-subsection">🧱 Clean Architecture Implementation</div>
+                <div className="modal-content-text">Game logic lives in a pure domain layer, completely independent from Unity-specific code.</div>
+                <div className="modal-subsection">🧩 MVC-Based UI Architecture</div>
+                <div className="modal-content-text">Clear separation between Models, Views, and Controllers, using DTOs to keep views passive and decoupled.</div>
+                <div className="modal-subsection">🧪 Test-Driven Development (TDD)</div>
+                <div className="modal-content-text">Core systems such as production, pricing, and progression rules are covered by automated unit tests.</div>
+
+                <div className="modal-section">⚙️ Tools</div>
+                <div className="modal-content-text">
+                    <ul>
+                        <li><b>Unity</b> — Core game engine.</li>
+                        <li><b>C#</b> — Main programming language.</li>
+                        <li><b>Rider</b> — IDE for development and debugging.</li>
+                        <li><b>Git & GitHub</b> — Version control.</li>
+                        <li><b>NUnit / Unity Test Runner</b> — Automated testing.</li>
+                    </ul>
+                </div>
+
+                <div className="modal-section">📚 Skills & Learnings</div>
+                <div className="modal-content-text">
+                    <ul>
+                        <li><b>Clean Architecture in Unity</b> — Learned how to structure a Unity project using layered architecture, keeping business logic independent from the engine.</li>
+                        <li><b>Test-Driven Development</b> — Applied TDD to game systems, improving confidence, maintainability, and long-term scalability.</li>
+                        <li><b>MVC and UI Decoupling</b> — Designed a UI architecture where views contain no game logic and rely entirely on controllers and DTOs.</li>
+                        <li><b>Scalable System Design</b> — Built systems with extensibility in mind, making it easy to add new buildings, upgrades, or mechanics without modifying existing code.</li>
+                        <li><b>Incremental Game Design</b> — Gained deeper understanding of progression systems, balancing, and economy design in idle/incremental games.</li>
+                    </ul>
+                </div>
             </React.Fragment>
         )
     }
@@ -48,14 +90,14 @@ function godai() {
                         <li><b>Player Controller</b> — Movement physics, combat system, and ability management.</li>
                         <li><b>Entities Health System</b> — Damage logic using hitboxes and hurtboxes.</li>
                         <li><b>Game Mechanics</b> — Environment interaction.</li>
-                        <li><b>Dialogue System</b> — Implemented using <a href="https://www.inklestudios.com/ink/">Ink</a>, supporting variable storage and function calls.</li>
+                        <li><b>Dialogue System</b> — Implemented using <a href="https://www.inklestudios.com/ink/" target="_blank" rel="noreferrer">Ink</a>, supporting variable storage and function calls.</li>
                         <li><b>Save System</b> — Data serialization and deserialization using JSON.</li>
                         <li><b>Scene Loader</b> — Scene transitions with dependency management.</li>
                         <li>
                             <b>Event & Global Variable System</b> — Designed with Scriptable Objects, based in my own implementations:
                             <ul>
-                                <li><a href="https://github.com/DiegoRuizGil/so-game-events.git">SO Game Events Architecture</a></li>
-                                <li><a href="https://github.com/DiegoRuizGil/unity-global-variables.git">Unity Global Variables</a></li>
+                                <li><a href="https://github.com/DiegoRuizGil/so-game-events.git" target="_blank" rel="noreferrer">SO Game Events Architecture</a></li>
+                                <li><a href="https://github.com/DiegoRuizGil/unity-global-variables.git" target="_blank" rel="noreferrer">Unity Global Variables</a></li>
                             </ul>
                         </li>
                         <li><b>Collectibles</b> — Health and attack upgrades.</li>
@@ -271,7 +313,7 @@ function character_controller() {
     return {
         title: "Character Controller - Platformer 2D",
         description:
-            "needs short description",
+            "A 2D platformer character controller built with Unity’s Rigidbody2D, featuring physics-based movement, a state machine for player actions, and full integration with the New Input System.",
         logo: "https://worldvectorlogo.com/logos/unity-69.svg",
         github: "https://github.com/DiegoRuizGil/Platformer-2D-Character-Controller-Unity",
         itchio: "https://diegorg64.itch.io/character-controller-platformer-2d",
@@ -328,7 +370,7 @@ function pathfinding() {
     return {
         title: "A* Pathfinding",
         description:
-            "needs short description",
+            "A Unity-based implementation of the A pathfinding algorithm for 2D games, featuring a node-based grid system and a custom grid generation tool integrated with Unity’s Tilemap and obstacle detection.",
         logo: "https://worldvectorlogo.com/logos/unity-69.svg",
         github: "https://github.com/DiegoRuizGil/A-Star-Pathfinding-Unity",
         itchio: "https://diegorg64.itch.io/a-pathfinding-unity-2d",
