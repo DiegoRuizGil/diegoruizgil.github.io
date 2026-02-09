@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import Project from "./project";
 
-import INFO from "../../data/user";
 import myProjects from "../../data/projects";
 
 import "./styles/allProjects.css";
@@ -24,7 +23,6 @@ const AllProjects = ({ maxProjects }) => {
 					onClick={() => setSelectedProject(project())}
 				>
 					<Project
-						logo={project().logo}
 						title={project().title}
 						description={project().description}
 						banner={project().banner}
