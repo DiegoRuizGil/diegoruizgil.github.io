@@ -62,7 +62,7 @@ const Contact = () => {
 					</div>
 
 					<a
-						href="./CV - DiegoRuizGil - Gamedev.pdf"
+						href="./CV - DiegoRuizGil.pdf"
 						download
 						className="cv-button"
 					>
