@@ -23,11 +23,13 @@ const Studies = () => {
 										alt={`${id}-study`}
 										className="info-image"
 									/>
-									<div className="info-header">
-										<div className="info-title">{study.title}</div>
-										<div className="info-duration">| {study.timeframe}</div>
+									<div className="info-content">
+										<div className="info-header">
+											<div className="info-title">{study.title}</div>
+											<div className="info-duration">| {study.timeframe}</div>
+										</div>
+										<div className="info-subtitle">{study.institution}</div>
 									</div>
-									<div className="info-subtitle">{study.institution}</div>
 								</div>
 							)
 						)}

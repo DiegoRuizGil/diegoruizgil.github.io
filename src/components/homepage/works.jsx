@@ -23,11 +23,13 @@ const Works = () => {
 										alt={`${id}-work`}
 										className="info-image"
 									/>
-									<div className="info-header">
-										<div className="info-title">{work.title}</div>
-										<div className="info-duration">| {work.timeframe}</div>
+									<div className="info-content">
+										<div className="info-header">
+											<div className="info-title">{work.title}</div>
+											<div className="info-duration">| {work.timeframe}</div>
+										</div>
+										<div className="info-subtitle">{work.description}</div>
 									</div>
-									<div className="info-subtitle">{work.description}</div>
 								</div>
 							)
 						)}
