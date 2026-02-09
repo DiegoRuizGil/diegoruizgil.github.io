@@ -75,7 +75,7 @@
 
 .homepage-projects {
 	flex-basis: 300px;
-	padding-top: 100px;
+	padding-top: 60px;
 }
 
 .homepage-articles {
@@ -99,6 +99,7 @@
 	}
 
 	.homepage-first-area-left-side {
+		padding-top: 100px;
 		display: flex;
 		flex-direction: column; /* Changed: set direction to column */
 		align-items: flex-start;
@@ -108,7 +109,7 @@
 
 	.homepage-title {
 		width: 100% !important;
-		margin-top: 180px;
+		margin-top: 20px;
 		order: 2;
 	}
 
@@ -124,8 +125,8 @@
 	}
 
 	.homepage-image-container {
-		padding-top: 50px;
-		padding-bottom: 50px;
+		/* padding-top: 50px; */
+		padding-bottom: 50px !important;
 		margin-left: 10px;
 		order: 1;
 	}
