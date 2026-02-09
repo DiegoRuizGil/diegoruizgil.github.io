@@ -156,3 +156,11 @@
 .modal-content a {
 	color: var(--link-color);
 }
+
+@media (max-width: 1024px) {
+	.modal-content {
+		padding-right: 2rem;
+		padding-left: 2rem;
+		padding-bottom: 2rem;
+	}
+}
