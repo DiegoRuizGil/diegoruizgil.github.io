@@ -3,7 +3,7 @@ import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 
 import Card from "../common/card";
 
-import "./styles/studies.css";
+import "./styles/infoList.css";
 import INFO from "../../data/user";
 
 const Studies = () => {
@@ -13,21 +13,21 @@ const Studies = () => {
 				icon={faGraduationCap}
 				title="Studies"
 				body = {
-					<div className="studies-body">
+					<div className="infoList-body">
 						{INFO.studies && INFO.studies.map(
 							(study, id) => (
-								<div className="study">
+								<div className="info">
 									<img
 										height={30}
 										src={study.logo}
 										alt={`${id}-study`}
-										className="study-image"
+										className="info-image"
 									/>
-									<div className="study-header">
-										<div className="study-title">{study.title}</div>
-										<div className="study-duration">| {study.timeframe}</div>
+									<div className="info-header">
+										<div className="info-title">{study.title}</div>
+										<div className="info-duration">| {study.timeframe}</div>
 									</div>
-									<div className="study-subtitle">{study.institution}</div>
+									<div className="info-subtitle">{study.institution}</div>
 								</div>
 							)
 						)}
