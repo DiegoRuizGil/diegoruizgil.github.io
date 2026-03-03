@@ -29,14 +29,14 @@ const INFO = {
 		{
 			title: "Viva Games Studio",
 			description: "Worked on the maintenance and updates of Merge Robots, a mobile game developed in Unity.",
-			timeframe: "2024 - 2025",
+			timeframe: "Nov. 2024 - Dec. 2024",
 			url: "https://www.vivastudios.com/",
 			logo: "./viva-games-logo.png",
 		},
 		{
 			title: "Ghenova Digital",
 			description: "Developed an early prototype of a ship radar system in Unity.",
-			timeframe: "2023",
+			timeframe: "Feb. 2023 - May 2023",
 			url: "https://ghenova.com/digital/",
 			logo: "./ghenova-logo.png",
 		},
