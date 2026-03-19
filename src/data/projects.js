@@ -1,5 +1,62 @@
 import React from "react";
 
+function pokemon_battle_clone() {
+    return {
+        title: "Pokémon Battle Clone",
+        description:
+            "Turn-based Pokémon battle system clone built in Unity, focused on clean architecture, testability, and scalable design of complex game mechanics.",
+        logo: "https://worldvectorlogo.com/logos/unity-69.svg",
+        github: "https://github.com/DiegoRuizGil/pokemon-battle-clone",
+        itchio: "https://diegorg64.itch.io/pokemon-battle-clone",
+        banner: "./projects/pokemon_battle_clone.png",
+        body: (
+            <React.Fragment>
+                <div className="modal-section">📌 About</div>
+                <div className="modal-content-text">
+                    <p><b>Pokémon Battle Clone</b> is a Unity project that recreates the core mechanics of the Pokémon turn-based battle system, focusing on gameplay rules, flexibility, and system design rather than visual fidelity.</p>
+                    <p>The goal of the project is to explore how to design a complex, rule-driven system using Clean Architecture principles, ensuring that battle logic remains completely independent from Unity and can be easily extended, tested, and maintained.</p>
+                </div>
+
+                <div className="modal-section">🚀 Main features</div>
+                <div className="modal-subsection">⚔️ Turn-Based Battle System</div>
+                <div className="modal-content-text">Implements a full turn resolution flow, including action selection, priority handling, and battle state transitions.</div>
+                <div className="modal-subsection">🎮 Core Battle Actions</div>
+                <div className="modal-content-text">Supports essential actions such as executing moves and switching Pokémon, following classic battle rules.</div>
+                <div className="modal-subsection">🎯 Move System & Effects</div>
+                <div className="modal-content-text">Moves include a variety of effects such as damage, stat modifications, healing, recoil, and conditional behaviors.</div>
+                <div className="modal-subsection">🎲 Accuracy & Probabilistic Mechanics</div>
+                <div className="modal-content-text">Implements accuracy checks and secondary effects with probability, replicating the uncertainty of real Pokémon battles.</div>
+                <div className="modal-subsection">📊 Stat System</div>
+                <div className="modal-content-text">Includes stat calculations and stage modifiers that affect battle performance dynamically.</div>
+                <div className="modal-subsection">🧱 Clean Architecture Implementation</div>
+                <div className="modal-content-text">Battle logic is fully isolated in a domain layer, independent from Unity, allowing it to be tested and reused without engine dependencies.</div>
+
+                <div className="modal-section">⚙️ Tools</div>
+                <div className="modal-content-text">
+                    <ul>
+                        <li><b>Unity</b> — Core game engine.</li>
+                        <li><b>C#</b> — Main programming language.</li>
+                        <li><b>Rider</b> — IDE for development and debugging.</li>
+                        <li><b>Git & GitHub</b> — Version control.</li>
+                        <li><b>NUnit / Unity Test Runner</b> — Automated testing.</li>
+                    </ul>
+                </div>
+
+                <div className="modal-section">📚 Skills & Learnings</div>
+                <div className="modal-content-text">
+                    <ul>
+                        <li><b>System Design for Complex Mechanics</b> — Learned how to model and structure a rule-heavy system with many interacting mechanics in a scalable way.</li>
+                        <li><b>Clean Architecture in Practice</b> — Applied layered architecture to fully decouple game logic from Unity, improving maintainability and testability.</li>
+                        <li><b>Domain-Driven Thinking</b> — Designed battle systems focusing on domain rules and behaviors rather than engine constraints.</li>
+                        <li><b>Extensibility & Flexibility</b> — Built systems that allow adding new moves, effects, and mechanics without modifying existing code.</li>
+                        <li><b>Testing Complex Interactions</b> — Gained experience testing systems with probabilistic outcomes and multiple interacting rules.</li>
+                    </ul>
+                </div>
+            </React.Fragment>
+        )
+    }
+}
+
 function cookie_clicker() {
     return {
         title: "Cookie Clicker Clone",
@@ -418,6 +475,6 @@ function pathfinding() {
 }
 
 
-const myProjects = [cookie_clicker, godai, tactics_wars, global_variables, so_game_events, character_controller, pathfinding];
+const myProjects = [pokemon_battle_clone, cookie_clicker, godai, tactics_wars, global_variables, so_game_events, character_controller, pathfinding];
 
 export default myProjects;
