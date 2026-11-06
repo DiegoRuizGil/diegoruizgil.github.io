@@ -1,0 +1,38 @@
+{
+	"title": "AsyncCsvProcessor",
+	"tagline": "Bulk CSV imports processed in the background with queues, workers, retries and recovery from failures.",
+	"category": "Backend",
+	"year": "2026",
+	"role": "Solo developer",
+	"banner": null,
+	"stack": [".NET 10", "RabbitMQ", "MassTransit", "PostgreSQL", "Quartz.NET", "Docker Compose", "Testcontainers"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/AsyncCsvProcessor", "type": "github" }
+	],
+	"overview": [
+		"A user uploads a CSV with thousands of rows and the API **accepts it instantly**. A separate worker then processes it row by row: it validates each one, stores the valid ones and records the errors **without stopping the rest of the file**.",
+		"If the worker dies halfway, a scheduled job detects the stuck job and retries it. If retries run out, the job is marked as failed. The domain (a product catalog) is deliberately simple so the focus stays on the asynchronous infrastructure."
+	],
+	"highlights": [
+		{ "icon": "📨", "title": "Non-blocking API", "text": "Accepts the task and answers immediately; a worker does the heavy lifting." },
+		{ "icon": "♻️", "title": "Self-recovering", "text": "A periodic Quartz job requeues stuck jobs up to a configurable number of attempts." },
+		{ "icon": "🧾", "title": "Row-level error report", "text": "Invalid rows are logged with their row number and reason, and products are upserted by SKU." },
+		{ "icon": "🐳", "title": "One command to run", "text": "The whole stack starts with `docker compose up --build`." }
+	],
+	"decisions": [
+		{ "title": "Explicit job lifecycle", "text": "Pending → Processing → Completed / CompletedWithErrors / Failed." },
+		{ "title": "Delete the CSV only on terminal states", "text": "The uploaded file is removed in four genuinely final cases, and deliberately not when the consumer throws, because MassTransit may still retry." },
+		{ "title": "The message carries a path, not the file", "text": "Avoids duplicating a heavy file on every retry. Files are stored with a random GUID name to prevent path traversal and collisions, keeping the original name separately." },
+		{ "title": "Separate queues per priority", "text": "Low / Normal / High queues instead of RabbitMQ's native priority queues, because they are simpler to reason about." },
+		{ "title": "MassTransit v8 pinned on purpose", "text": "From v9 it became commercial in 2025, while v8 remains open source with support until the end of 2026." },
+		{ "title": "Real database in tests", "text": "Integration tests use Postgres in a container (Testcontainers) instead of in-memory or SQLite, one container per test collection with Respawn resetting data, and hand-written fakes instead of a mocking library." }
+	],
+	"limitations": [
+		"No authentication on the endpoints, files stored on local disk, no automatic encoding or delimiter detection, and no upload size limit configured."
+	],
+	"learnings": [
+		"Designing for failure: retries, stuck-job recovery and knowing exactly when it is safe to clean up.",
+		"Testing against real infrastructure with Testcontainers."
+	],
+	"media": []
+}

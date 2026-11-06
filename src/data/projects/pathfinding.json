@@ -1,0 +1,26 @@
+{
+	"title": "A* Pathfinding",
+	"tagline": "A node-based A* implementation for 2D Unity games with a grid generator that reads the Tilemap.",
+	"category": "Tool",
+	"year": null,
+	"role": "Solo developer",
+	"banner": "projects/pathfinding.png",
+	"stack": ["Unity", "C#", "Tilemap"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/A-Star-Pathfinding-Unity", "type": "github" },
+		{ "label": "Play on itch.io", "url": "https://diegorg64.itch.io/a-pathfinding-unity-2d", "type": "itch" }
+	],
+	"overview": [
+		"An A* implementation that computes paths over a node grid for 2D games, plus a custom tool to generate that grid from a defined area, taking walls and obstacles from Unity's Tilemap."
+	],
+	"highlights": [
+		{ "icon": "🗺️", "title": "A* on a node grid", "text": "Efficient path calculation from a start to a goal." },
+		{ "icon": "🛠️", "title": "Grid generator", "text": "Define the area and generate the grid integrated with the Tilemap." },
+		{ "icon": "🚧", "title": "Obstacle detection", "text": "Walls and obstacles are detected automatically." }
+	],
+	"learnings": [
+		"Implementing and optimizing A* for grid environments.",
+		"Building a tool to speed up level design."
+	],
+	"media": []
+}

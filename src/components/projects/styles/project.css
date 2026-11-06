@@ -1,86 +1,170 @@
 @import "../../../data/styles.css";
 
-.project {
-	mix-blend-mode: normal;
-	border-radius: 20px;
-	opacity: 1;
-	height: 100%;
-	outline: 2px solid #f4f4f5;
-}
+/* ---------- Card ---------- */
 
-.project a {
-	text-decoration: none;
+.project {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	overflow: hidden;
+	text-align: left;
+	cursor: pointer;
+	font: inherit;
+	color: inherit;
+
+	background: var(--surface);
+	border: 1px solid var(--border-strong);
+	border-radius: 16px;
+	transition: transform 0.15s ease, box-shadow 0.15s ease,
+		border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .project:hover {
-	background: #fafafa;
-	opacity: 1;
-	transition: background-color 0.1s ease-in-out;
-	background-color: #f5f5f5; 
-	box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-	transform: translateY(-1px);
+	background: var(--surface-hover);
+	border-color: var(--tertiary-color);
+	box-shadow: 0 6px 18px var(--shadow);
+	transform: translateY(-2px);
 }
 
-.project:hover .project-link {
-	color: var(--link-color);
-	transition: color 0.3s ease-in-out;
+.project:focus-visible {
+	outline: 2px solid var(--link-color);
+	outline-offset: 2px;
+}
+
+.project-cover {
+	height: 130px;
+	flex-shrink: 0;
 }
 
 .project-container {
-	padding: 30px;
-	padding-top: 0;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 18px 20px 20px;
 }
 
-.project-banner {
-	width: 100%;
-	height: 100px;
+.project-meta {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.project-year {
+	font-size: 12px;
+	color: var(--tertiary-color);
+}
+
+.project-title {
+	font-family: var(--secondary-font);
+	color: var(--primary-color);
+	font-size: 17px;
+	font-weight: 700;
+	margin-top: 10px;
+	margin-bottom: 6px;
+}
+
+.project-description {
+	color: var(--secondary-color);
+	font-size: 14px;
+	line-height: 1.55;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
 	overflow: hidden;
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
 }
 
-.project-banner img {
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: auto;
+	padding-top: 16px;
+}
+
+/* ---------- Shared: cover, chips, tags (also used by the modal) ---------- */
+
+.cover {
+	width: 100%;
+	overflow: hidden;
+	background: var(--surface-muted);
+}
+
+.cover img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	display: block;
 }
 
-.project-logo {
-	width: 30px;
-}
-
-.project-logo img {
-	width: 100%;
-}
-
-.project-title {
-	font-family: var(--secondary-font);
-	color: var(--primary-color);
-	font-size: 16px;
-	padding-top: 15px;
-	margin-bottom: 1em;
-	font-weight: 700;
-}
-
-.project-description {
-	color: var(--secondary-color);
-}
-
-.project-link {
+.cover-fallback {
 	display: flex;
 	align-items: center;
-	color: var(--secondary-color);
-	font-size: 12px;
-	padding-top: 20px;
+	justify-content: center;
+	font-size: 44px;
 }
 
-.project-link-icon {
-	padding-left: 5px;
-	font-size: 13px;
+.cover-game {
+	background: linear-gradient(135deg, #0f766e 0%, #4338ca 100%);
 }
 
-.project-link-text {
-	padding-left: 20px;
+.cover-tool {
+	background: linear-gradient(135deg, #b45309 0%, #be185d 100%);
+}
+
+.cover-backend {
+	background: linear-gradient(135deg, #1d4ed8 0%, #6d28d9 100%);
+}
+
+.chip {
+	display: inline-block;
+	padding: 2px 9px;
+	border-radius: 999px;
+	font-size: 11px;
 	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: var(--secondary-color);
+	background: var(--surface-muted);
+}
+
+.chip-game {
+	color: #0f766e;
+	background: rgba(20, 184, 166, 0.14);
+}
+
+.chip-tool {
+	color: #b45309;
+	background: rgba(245, 158, 11, 0.16);
+}
+
+.chip-backend {
+	color: #4f46e5;
+	background: rgba(99, 102, 241, 0.14);
+}
+
+:root[data-theme="dark"] .chip-game {
+	color: #5eead4;
+}
+
+:root[data-theme="dark"] .chip-tool {
+	color: #fbbf24;
+}
+
+:root[data-theme="dark"] .chip-backend {
+	color: #a5b4fc;
+}
+
+.tag {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 6px;
+	font-size: 12px;
+	color: var(--secondary-color);
+	background: var(--surface-muted);
+	border: 1px solid var(--border);
+}
+
+.tag-more {
+	color: var(--tertiary-color);
 }

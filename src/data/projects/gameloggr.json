@@ -1,0 +1,32 @@
+{
+	"title": "GameLoggr",
+	"tagline": "A Letterboxd-style REST API to keep a personal video game library, deployed and documented with Swagger.",
+	"category": "Backend",
+	"year": "2026",
+	"role": "Solo developer",
+	"banner": null,
+	"stack": [".NET 10", "ASP.NET Core", "EF Core", "PostgreSQL", "JWT", "Docker"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/GameLoggr", "type": "github" },
+		{ "label": "Live API (Swagger)", "url": "https://gameloggr-production.up.railway.app/swagger", "type": "demo" }
+	],
+	"overview": [
+		"A REST API to log and manage a library of video games, in the spirit of Letterboxd. It is deployed on Railway and you can try every endpoint from the Swagger UI.",
+		"It is the first of my backend projects, built to apply Clean Architecture and integration testing outside of Unity. Its natural follow-up is [AsyncCsvProcessor](#asynccsvprocessor)."
+	],
+	"highlights": [
+		{ "icon": "🔐", "title": "JWT authentication", "text": "Token-based access to the API." },
+		{ "icon": "✅", "title": "Validation", "text": "Requests are validated with FluentValidation." },
+		{ "icon": "🐳", "title": "Containerized and deployed", "text": "Dockerized and running live on Railway with PostgreSQL." }
+	],
+	"decisions": [
+		{ "title": "Clean Architecture", "text": "Same layering approach I use in my Unity projects, applied to an ASP.NET Core API." },
+		{ "title": "Integration tests", "text": "Tests run against the real HTTP pipeline with `WebApplicationFactory` and Moq, so they check behavior rather than implementation." }
+	],
+	"limitations": [],
+	"learnings": [
+		"Taking an API from idea to a deployed, documented service.",
+		"Where to spend testing effort: integration tests over the real pipeline give more confidence than isolated unit tests for this kind of service."
+	],
+	"media": []
+}

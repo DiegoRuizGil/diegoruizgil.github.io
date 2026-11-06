@@ -1,25 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
+import ProjectCover from "./projectCover";
 
 import "./styles/project.css";
 
-const Project = (props) => {
-	const { title, description, banner } = props;
+const MAX_TAGS = 3;
+
+const Project = ({ project, onOpen }) => {
+	const { title, tagline, category, year, stack = [] } = project;
+	const extra = stack.length - MAX_TAGS;
 
 	return (
-		<React.Fragment>
-			<div className="project">
-				<Link>
-					<div className="project-banner">
-						<img src={banner} alt="banner" />
-					</div>
-					<div className="project-container">
-						<div className="project-title">{title}</div>
-						<div className="project-description">{description}</div>
-					</div>
-				</Link>
+		<button
+			type="button"
+			className="project"
+			onClick={onOpen}
+			aria-label={`Open ${title}`}
+		>
+			<ProjectCover project={project} className="project-cover" />
+			<div className="project-container">
+				<div className="project-meta">
+					<span className={`chip chip-${(category || "").toLowerCase()}`}>
+						{category}
+					</span>
+					{year && <span className="project-year">{year}</span>}
+				</div>
+				<div className="project-title">{title}</div>
+				<div className="project-description">{tagline}</div>
+				<div className="project-tags">
+					{stack.slice(0, MAX_TAGS).map((tag) => (
+						<span className="tag" key={tag}>
+							{tag}
+						</span>
+					))}
+					{extra > 0 && <span className="tag tag-more">+{extra}</span>}
+				</div>
 			</div>
-		</React.Fragment>
+		</button>
 	);
 };
 

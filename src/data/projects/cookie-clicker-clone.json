@@ -1,0 +1,35 @@
+{
+	"title": "Cookie Clicker Clone",
+	"tagline": "An incremental game used as a case study: modular Clean Architecture, strict MVC and TDD in Unity.",
+	"category": "Game",
+	"year": "2025",
+	"role": "Solo developer",
+	"banner": "projects/cookie.png",
+	"stack": ["Unity", "C#", "Clean Architecture", "MVC", "TDD", "NUnit"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/cookie-clicker-clone", "type": "github" },
+		{ "label": "Play (WebGL / Windows)", "url": "https://diegorg64.itch.io/cookie-clicker-clone", "type": "itch" }
+	],
+	"overview": [
+		"A recreation of the core mechanics of [Cookie Clicker](https://cookieclicker.com/). It is a practice project whose goal is **architecture and code quality**, not visual polish.",
+		"Incremental games are a great domain-modeling exercise: production, exponential progression and dynamic prices are deterministic and don't depend on the engine, so domain and presentation separate cleanly."
+	],
+	"highlights": [
+		{ "icon": "🍪", "title": "Core loop", "text": "Click the cookie, buy buildings and watch the cookies-per-second grow every frame." },
+		{ "icon": "🛒", "title": "Two shops", "text": "Buildings with dynamic prices that reveal new ones as you progress, and upgrades that boost production globally or per building type." },
+		{ "icon": "🔓", "title": "Unlock conditions", "text": "Every upgrade defines when it becomes available and only shows up when those conditions are met." }
+	],
+	"decisions": [
+		{ "title": "Modular Clean Architecture", "text": "Instead of one monolithic domain, the game is split by feature: **Cookies**, **Store** and **Modifiers**. Each module has a pure C# **Domain** and an **Infrastructure** layer with the Unity-specific code." },
+		{ "title": "Modules isolated with assemblies", "text": "Unity assembly definitions prevent cyclic dependencies and keep the domain independent from the engine at compile time." },
+		{ "title": "Passive views, thin controllers", "text": "MVC for the shops and the cookie view. Controllers listen to the UI, call the domain and hand results to the view through DTOs. Views implement interfaces such as `IBuildingStoreView`, following dependency inversion." },
+		{ "title": "TDD where it matters", "text": "The domain is covered by tests for costs, production per second, upgrade effects and unlock conditions, written test first." }
+	],
+	"limitations": [],
+	"learnings": [
+		"Strict MVC doesn't map naturally onto Unity's component model. For values that change every frame (cookies, production, prices), an **observer pattern** would have been cleaner than DTOs. I'd do that differently next time.",
+		"Patterns need to justify themselves: the balance between architectural discipline and over-engineering.",
+		"If I extended it, the next step would be an editor tool to manage buildings and upgrades, which are currently configured by hand across several ScriptableObjects."
+	],
+	"media": []
+}

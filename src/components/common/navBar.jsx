@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import ThemeToggle from "./themeToggle";
+
 import "./styles/navBar.css";
 
 const NavBar = (props) => {
@@ -42,6 +44,7 @@ const NavBar = (props) => {
 						</ul>
 					</div>
 				</nav>
+				<ThemeToggle />
 			</div>
 		</React.Fragment>
 	);

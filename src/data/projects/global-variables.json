@@ -1,0 +1,28 @@
+{
+	"title": "Unity Global Variables",
+	"tagline": "An open-source system to share variables across scripts and scenes using ScriptableObjects.",
+	"category": "Tool",
+	"year": null,
+	"role": "Solo developer",
+	"banner": "projects/global-variables.png",
+	"stack": ["Unity", "C#", "ScriptableObjects"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/unity-global-variables", "type": "github" },
+		{ "label": "itch.io", "url": "https://diegorg64.itch.io/unity-global-variables", "type": "itch" }
+	],
+	"overview": [
+		"Global values live in ScriptableObject assets that any script can read or change, across scenes, directly from the editor.",
+		"Inspired by Ryan Hipple's talk [Game Architecture with Scriptable Objects](https://www.youtube.com/watch?v=raQ3iHhE_Kk) (Unite Austin 2017). Usage is documented in the README."
+	],
+	"highlights": [
+		{ "icon": "🛠️", "title": "Designer-friendly", "text": "Tweak values from the editor without touching code." },
+		{ "icon": "💾", "title": "Persistence", "text": "Save and load variable states between play sessions." },
+		{ "icon": "🔗", "title": "Fewer dependencies", "text": "Replace direct script references with shared variables." },
+		{ "icon": "📊", "title": "Several types", "text": "Integers, floats, booleans and more." }
+	],
+	"learnings": [
+		"Reusable systems with ScriptableObjects and managing data across scenes.",
+		"Improving the workflow of designers with real-time editing of values."
+	],
+	"media": []
+}

@@ -1,0 +1,27 @@
+{
+	"title": "SO Game Events",
+	"tagline": "An open-source Unity event system based on ScriptableObjects to decouple the objects in a scene.",
+	"category": "Tool",
+	"year": null,
+	"role": "Solo developer",
+	"banner": "projects/so-game-events.png",
+	"stack": ["Unity", "C#", "ScriptableObjects"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/so-game-events", "type": "github" },
+		{ "label": "itch.io", "url": "https://diegorg64.itch.io/so-game-events-architecture", "type": "itch" }
+	],
+	"overview": [
+		"Objects communicate by raising and listening to event assets instead of holding direct references to each other, which reduces dependencies and keeps scenes modular.",
+		"Inspired by Ryan Hipple's talk [Game Architecture with Scriptable Objects](https://www.youtube.com/watch?v=raQ3iHhE_Kk) (Unite Austin 2017). Usage is documented in the README."
+	],
+	"highlights": [
+		{ "icon": "🔌", "title": "Decoupled communication", "text": "Objects talk without knowing each other." },
+		{ "icon": "🎮", "title": "Easy to adopt", "text": "Drops into an existing Unity project." },
+		{ "icon": "🧩", "title": "Modular", "text": "Simple to extend to the needs of each project." }
+	],
+	"learnings": [
+		"Event-driven architecture and low-dependency communication between game objects.",
+		"Designing reusable systems that fit into existing codebases."
+	],
+	"media": []
+}

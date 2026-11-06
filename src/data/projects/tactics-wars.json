@@ -1,0 +1,35 @@
+{
+	"title": "Tactics Wars",
+	"tagline": "A turn-based medieval strategy game on a grid, built alone as my bachelor's final project.",
+	"category": "Game",
+	"year": "2023",
+	"role": "Solo developer",
+	"banner": "projects/tactics-wars.png",
+	"stack": ["Unity", "C#", "Behaviour Trees", "A*"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/Tactics_Wars", "type": "github" },
+		{ "label": "Play on itch.io", "url": "https://diegorg64.itch.io/tactics-wars", "type": "itch" }
+	],
+	"overview": [
+		"A strategy game on a chessboard-like grid, where you gather resources, build, and organize an army to destroy your rival's urban center.",
+		"It is a complete game developed on my own, from planning to the enemy AI."
+	],
+	"highlights": [
+		{ "icon": "♟️", "title": "Grid-based tactics", "text": "Units move and buildings are placed on a custom grid." },
+		{ "icon": "🏰", "title": "Economy and army", "text": "Gather resources, construct buildings and train troops." },
+		{ "icon": "🤖", "title": "AI opponent", "text": "An enemy that makes strategic decisions on its own." }
+	],
+	"contributions": [
+		"**Grid map system** for unit movement and building placement.",
+		"**Turn-based logic** governing all interactions.",
+		"**Units and buildings**: stats and costs, balanced by me.",
+		"**Enemy AI** with Behaviour Trees and A* pathfinding.",
+		"**Save/load system** and **audio** implementation."
+	],
+	"learnings": [
+		"Planning and scoping a whole project alone, and breaking it into tasks.",
+		"Building AI with behaviour trees and pathfinding.",
+		"Structuring a modular codebase with unit tests."
+	],
+	"media": []
+}

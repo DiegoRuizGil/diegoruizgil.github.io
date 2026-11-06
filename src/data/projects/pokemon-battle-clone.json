@@ -1,0 +1,41 @@
+{
+	"title": "Pokémon Battle Clone",
+	"tagline": "A turn-based battle system built to show how a rule-heavy game can live in a pure, fully tested domain layer, now with online 1v1.",
+	"category": "Game",
+	"year": "2026",
+	"role": "Solo developer",
+	"banner": "projects/pokemon_battle_clone.png",
+	"stack": ["Unity", "C#", "Clean Architecture", "TDD", "Photon Fusion 2"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/pokemon-battle-clone", "type": "github" },
+		{ "label": "Play in browser", "url": "https://diegorg64.itch.io/pokemon-battle-clone", "type": "itch" }
+	],
+	"overview": [
+		"A recreation of the Pokémon battle system focused on **rules and architecture, not visual polish**. The battle logic lives in a domain layer that knows nothing about Unity, so it can be tested, reused and extended without touching the engine.",
+		"It supports the full turn loop, move effects with probabilities, and **online two-player battles**."
+	],
+	"highlights": [
+		{ "icon": "⚔️", "title": "Full turn flow", "text": "Action selection, priority, switching Pokémon and move execution, with the battle state managed end to end." },
+		{ "icon": "🎲", "title": "Moves with real rules", "text": "Damage, stat stages, healing and recoil, plus accuracy checks and secondary effects that trigger with a probability." },
+		{ "icon": "🌐", "title": "Online multiplayer", "text": "Two players battle through a 6-character lobby code, with handling for the rival disconnecting." },
+		{ "icon": "🧪", "title": "Deterministic and testable", "text": "A fixed seed makes a battle reproducible, which is what makes the probabilistic parts testable." }
+	],
+	"decisions": [
+		{ "title": "Four layers, one direction of dependency", "text": "**Domain** (battle rules), **Application** (orchestrates the flow), **Infrastructure** (data loading, integrations) and **Presentation** (Unity-specific UI). The domain never references the engine." },
+		{ "title": "Turns as an async flow", "text": "Each turn runs in three phases (start, action selection, execution) implemented with `async/await`, so waiting for a player, an AI or a remote client looks the same to the battle." },
+		{ "title": "Battle events drive the visuals", "text": "Every action emits events (damage, stat change, miss, immunity, fainted) that are processed in sequence and move both the animations and the battle log. The domain never calls the UI." },
+		{ "title": "Trainers are interchangeable strategies", "text": "`PlayerTrainer`, `RivalTrainer` and `NetworkTrainer` share the same `ITrainerStrategy`. Deciding an action is separated from executing it." },
+		{ "title": "Network layer decoupled from the domain", "text": "Built on **Photon Fusion 2 (Shared Mode)**. Both clients run the same battle with a shared seed and only exchange actions as small DTOs over RPC. The `NetworkTrainer` simply awaits the remote action with a `TaskCompletionSource`." },
+		{ "title": "Injected randomness", "text": "RNG goes through an `IRandom` interface, so tests and online clients can replay exactly the same battle." },
+		{ "title": "Data-driven moves", "text": "A move is a main effect plus optional extra effects with a probability, configured without code changes. Content is imported from PokeAPI with a custom editor tool ([PokeTool](#poketool))." }
+	],
+	"limitations": [
+		"Status conditions, abilities, weather and critical hits are not implemented yet."
+	],
+	"learnings": [
+		"Modeling a rule-heavy system with many interacting mechanics so that new moves and effects don't require changing existing code.",
+		"Testing probabilistic behavior by controlling the source of randomness instead of fighting it.",
+		"Keeping networking out of the domain: the network is just another way of deciding an action."
+	],
+	"media": []
+}

@@ -1,0 +1,37 @@
+{
+	"title": "GODAI",
+	"tagline": "A Japanese-mythology metroidvania made by a team for my master's final project, where I was Lead Programmer.",
+	"category": "Game",
+	"year": null,
+	"role": "Lead Programmer",
+	"banner": "projects/godai.png",
+	"stack": ["Unity", "C#", "Ink", "ScriptableObjects"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/Rapoporras/Izanagi_TLW.git", "type": "github" },
+		{ "label": "Play on itch.io", "url": "https://rapoporras.itch.io/godai", "type": "itch" }
+	],
+	"overview": [
+		"A 2D metroidvania inspired by Hollow Knight, Blasphemous, Metroid and Castlevania. You play Hinata, a warrior who must free the gods trapped by the Oni King, Shuten Doji, using the powers of the four **Godai elements**: fire, water, air and earth.",
+		"As **Lead Programmer** I led the programming team, defined the technical approach and built the core gameplay systems."
+	],
+	"highlights": [
+		{ "icon": "🌊", "title": "Elemental powers", "text": "Fire, water, air and earth to solve challenges and defeat enemies." },
+		{ "icon": "🗺️", "title": "Interconnected world", "text": "Regions linked together, with puzzles, secrets and increasingly dangerous enemies." },
+		{ "icon": "🐉", "title": "Multi-phase final boss", "text": "Seiryu, with phased behavior and attack logic." }
+	],
+	"contributions": [
+		"**Player controller**: movement physics, combat and ability management.",
+		"**Health system**: damage logic based on hitboxes and hurtboxes.",
+		"**Dialogue system** built with [Ink](https://www.inklestudios.com/ink/), with variable storage and function calls.",
+		"**Save system** with JSON serialization, and a **scene loader** with dependency management.",
+		"**Events and global variables** with ScriptableObjects, based on my own open-source tools: [SO Game Events](#so-game-events) and [Unity Global Variables](#global-variables).",
+		"**UI**: HUD, main and pause menus, loading screens and dialogue interface.",
+		"Collectibles, environment interaction and the final boss."
+	],
+	"learnings": [
+		"Leading a programming team and coordinating technical decisions.",
+		"Working closely with designers and artists so their work integrates smoothly.",
+		"Building complex gameplay systems for a metroidvania and optimizing them."
+	],
+	"media": []
+}

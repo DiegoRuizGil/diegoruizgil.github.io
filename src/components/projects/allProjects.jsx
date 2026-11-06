@@ -1,36 +1,40 @@
 import React, { useState } from "react";
 
 import Project from "./project";
+import ProjectModal from "./projectModal";
 
 import myProjects from "../../data/projects";
 
 import "./styles/allProjects.css";
-import ProjectModal from "./projectModal";
 
 const AllProjects = ({ maxProjects }) => {
-	const [selectedProject, setSelectedProject] = useState(null);
+	const [selectedId, setSelectedId] = useState(null);
 
-	let projects = myProjects;
-	if (maxProjects !== undefined)
-		projects = projects.slice(0, maxProjects);
+	const projects =
+		maxProjects !== undefined ? myProjects.slice(0, maxProjects) : myProjects;
+
+	// Look in the full list so project-to-project links work even on the
+	// homepage, where only a few cards are shown.
+	const selected = myProjects.find((p) => p.id === selectedId);
 
 	return (
 		<div className="all-projects-container">
-			{projects.map((project, index) => (
-				<div
-					className="all-projects-project"
-					key={index}
-					onClick={() => setSelectedProject(project())}
-				>
+			{projects.map((project) => (
+				<div className="all-projects-project" key={project.id}>
 					<Project
-						title={project().title}
-						description={project().description}
-						banner={project().banner}
+						project={project}
+						onOpen={() => setSelectedId(project.id)}
 					/>
 				</div>
 			))}
 
-			{selectedProject && (<ProjectModal selected={selectedProject} setSelected={setSelectedProject}/>)}
+			{selected && (
+				<ProjectModal
+					project={selected}
+					onClose={() => setSelectedId(null)}
+					onOpenProject={setSelectedId}
+				/>
+			)}
 		</div>
 	);
 };

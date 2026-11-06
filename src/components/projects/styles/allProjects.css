@@ -10,7 +10,12 @@
 	width: calc(100% / 3);
 	box-sizing: border-box;
 	padding: 10px;
-	overflow: hidden;
+}
+
+@media (max-width: 900px) {
+	.all-projects-project {
+		width: 50%;
+	}
 }
 
 @media (max-width: 600px) {

@@ -1,0 +1,39 @@
+{
+	"title": "PokeTool",
+	"tagline": "A Unity editor tool to browse, create and edit the game's content, built with UI Toolkit and documented design decisions.",
+	"category": "Tool",
+	"year": "2026",
+	"role": "Solo developer",
+	"banner": null,
+	"stack": ["Unity", "C#", "UI Toolkit", "Addressables", "ScriptableObjects"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/pokemon-battle-clone", "type": "github" }
+	],
+	"overview": [
+		"An editor window for Unity 6 that lets you view, create and edit the content of [Pokémon Battle Clone](#pokemon-battle-clone): Pokémon, moves and teams, all stored as ScriptableObjects. It opens from the `PokeTool/Open` menu.",
+		"It was my way of learning **UI Toolkit and Addressables from scratch** while building something with real technical substance."
+	],
+	"highlights": [
+		{ "icon": "🗂️", "title": "Three browsers", "text": "Pokémon, Moves and Teams tabs, each with search, toolbar and creation popups." },
+		{ "icon": "⬇️", "title": "PokeAPI import", "text": "Loads base stats, types and sprites straight into ScriptableObjects." },
+		{ "icon": "👥", "title": "Team editor", "text": "Up to 6 members with rich search rows, level, nature, EVs, IVs and final stats shown as bars, plus Undo/Redo." },
+		{ "icon": "🖼️", "title": "Addressable sprites", "text": "Sprites are loaded by ID convention instead of being referenced directly by the configs." }
+	],
+	"decisions": [
+		{ "title": "Composition over inheritance", "text": "When two types share little, a small duplicated class is fine. When they share a lot, it generalizes with `Foo<T>` that receives what is specific through a delegate or constructor (`ConfigRepository<T>`, `ConfigBrowser<T>`, `ConfigPicker<T>`)." },
+		{ "title": "Functions instead of repositories in the UI", "text": "UI classes receive things like `Func<List<T>>` or `Func<T, Sprite>`, so they stay small and easy to reason about." },
+		{ "title": "Typed UI rows", "text": "Each row is its own class with typed references and a `Bind(...)` method, instead of string-based queries scattered around." },
+		{ "title": "Hand-wired composition root", "text": "No DI container: the tool is small enough that explicit wiring is clearer." },
+		{ "title": "A cleaner stats domain", "text": "A `Stat` enum, an immutable `StatSet`, `StatsData` and `Nature` give a single source of names and limits." },
+		{ "title": "Reserved ID range for custom content", "text": "IDs from 11000 are reserved for custom content, so it never collides with PokeAPI IDs." },
+		{ "title": "Decisions written down with their why", "text": "For example, closing the detail panel on Undo because of stale cached state in the pickers, or replacing drag-and-drop with arrows." }
+	],
+	"limitations": [
+		"Deleting a move or Pokémon referenced by a team is not handled yet (the plan is to block deletion when in use)."
+	],
+	"learnings": [
+		"UI Toolkit and Addressables, learned by building a tool with a real use.",
+		"Designing editor tooling around workflows and decisions, not just features."
+	],
+	"media": []
+}

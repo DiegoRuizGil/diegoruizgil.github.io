@@ -1,0 +1,27 @@
+{
+	"title": "2D Platformer Character Controller",
+	"tagline": "A physics-based platformer controller with a state machine and the New Input System.",
+	"category": "Tool",
+	"year": null,
+	"role": "Solo developer",
+	"banner": "projects/character-controller.png",
+	"stack": ["Unity", "C#", "Rigidbody2D", "New Input System"],
+	"links": [
+		{ "label": "GitHub", "url": "https://github.com/DiegoRuizGil/Platformer-2D-Character-Controller-Unity", "type": "github" },
+		{ "label": "Play on itch.io", "url": "https://diegorg64.itch.io/character-controller-platformer-2d", "type": "itch" }
+	],
+	"overview": [
+		"A 2D character controller that applies forces to a `Rigidbody2D` for smooth movement, with every parameter exposed so it can be tuned to different gameplay styles.",
+		"Inspired by the [Dawnsour](https://www.youtube.com/playlist?list=PLRsowSGWU4GiYNO6kgDMSb7cied6LWDnV) tutorial series."
+	],
+	"highlights": [
+		{ "icon": "🕹️", "title": "State machine", "text": "Player actions are managed through explicit states." },
+		{ "icon": "⚡", "title": "Physics-based", "text": "Movement through Rigidbody2D forces." },
+		{ "icon": "🎮", "title": "Game feel", "text": "Techniques such as coyote time and input buffering." }
+	],
+	"learnings": [
+		"State-based architecture for character movement.",
+		"Game-feel techniques (coyote time, input buffering) and the New Input System."
+	],
+	"media": []
+}
