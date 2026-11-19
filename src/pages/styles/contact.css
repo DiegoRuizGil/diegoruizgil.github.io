@@ -4,15 +4,6 @@
 	padding-top: 25px;
 }
 
-.contact-logo {
-	display: flex;
-	position: fixed;
-	border: 1px solid var(--bg);
-	border-radius: 50%;
-	box-shadow: 0px 4px 10px var(--shadow-strong);
-	top: 4vh;
-}
-
 .contact-subtitle {
 	width: 100% !important;
 }

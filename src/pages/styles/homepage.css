@@ -1,10 +1,35 @@
 @import "../../data/styles.css";
 
+/* Reserves the space of the big (80px) logo: the logo itself is fixed. */
 .homepage-logo-container {
 	display: flex;
 	justify-content: left;
-	align-items: center;
+	align-items: flex-start;
 	padding-top: 130px;
+	min-height: calc(130px + 80px);
+}
+
+/*
+ * Big logo that follows the page, shrinks while scrolling and docks next to
+ * the nav bar. --logo-scroll (px) is set from homepage.jsx.
+ *   top:  scrolls with the page until it reaches the header offset
+ *   size: 80px -> header height (40px) over the first 100px of scroll
+ */
+.home-logo {
+	--logo-scroll: 0;
+	--logo-size: clamp(
+		var(--header-height),
+		calc(80px - var(--logo-scroll) * 0.4px),
+		80px
+	);
+	top: max(var(--header-top), calc(130px - var(--logo-scroll) * 1px));
+	width: var(--logo-size);
+	height: var(--logo-size);
+	box-shadow: none; /* the ring and shadow appear once docked */
+}
+
+.home-logo.is-docked {
+	box-shadow: 0 0 0 1px var(--bg), 0px 4px 10px var(--shadow-strong);
 }
 
 .homepage-container {

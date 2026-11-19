@@ -33,7 +33,7 @@ const Projects = () => {
 				<NavBar active="projects" />
 				<div className="content-wrapper">
 					<div className="projects-logo-container">
-						<div className="projects-logo">
+						<div className="header-logo">
 							<Logo width={46} />
 						</div>
 					</div>

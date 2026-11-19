@@ -1,11 +1,11 @@
 .theme-toggle {
 	position: fixed;
-	top: 3vh;
-	right: 3vw;
+	top: var(--header-top);
+	right: var(--header-toggle-right);
 	z-index: 999;
 
-	width: 40px;
-	height: 40px;
+	width: var(--header-height);
+	height: var(--header-height);
 	display: flex;
 	align-items: center;
 	justify-content: center;

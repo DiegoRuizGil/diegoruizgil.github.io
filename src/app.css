@@ -1,5 +1,15 @@
 @import "/src/data/styles.css";
 
+/* Shared geometry of the fixed header: logo (left), nav bar (centre) and
+   theme toggle (right) all use the same top offset and height. */
+:root {
+	--header-top: clamp(12px, 3vh, 28px);
+	--header-height: 40px;
+	--header-gap: 8px;
+	--header-logo-left: calc(5vw + 10px); /* where the content starts on phones */
+	--header-toggle-right: 3vw;
+}
+
 ::-webkit-scrollbar {
 	width: 10px;
 }

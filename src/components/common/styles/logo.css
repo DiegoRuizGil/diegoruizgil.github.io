@@ -4,3 +4,34 @@
 	margin: 0;
 	padding: 0;
 }
+
+/*
+ * The logo pinned to the top-left corner. It shares --header-top and
+ * --header-height (see app.css) with the nav bar and the theme toggle, so the
+ * three always line up. Horizontally it keeps its natural position inside the
+ * page content, except on phones, where it is placed explicitly so the nav bar
+ * can be laid out around it.
+ */
+.header-logo {
+	position: fixed;
+	top: var(--header-top);
+	z-index: 999;
+	display: flex;
+	width: var(--header-height);
+	height: var(--header-height);
+	border-radius: 50%;
+	box-shadow: 0 0 0 1px var(--bg), 0px 4px 10px var(--shadow-strong);
+}
+
+.header-logo .logo,
+.header-logo a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+@media (max-width: 600px) {
+	.header-logo {
+		left: var(--header-logo-left);
+	}
+}

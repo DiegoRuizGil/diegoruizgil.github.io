@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
@@ -23,50 +23,35 @@ import SEO from "../data/seo";
 
 import "./styles/homepage.css";
 
+// Scroll distance (px) over which the logo shrinks from 80px to the nav size.
+const LOGO_DOCK_SCROLL = 100;
+
 const Homepage = () => {
-	const [stayLogo, setStayLogo] = useState(false);
-	const [logoSize, setLogoSize] = useState(80);
-	const [oldLogoSize, setOldLogoSize] = useState(80);
+	const logoRef = useRef(null);
+	const [docked, setDocked] = useState(false);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
+	// The logo is always `position: fixed`. Its size and position are derived
+	// from the scroll offset in CSS (see homepage.css), so it can never get
+	// stuck in an intermediate state, even after a fast scroll or a reload in
+	// the middle of the page. Here we only publish the scroll value and flag
+	// when the logo has reached the nav bar.
 	useEffect(() => {
-		const handleScroll = () => {
-			let scroll = Math.round(window.pageYOffset, 2);
-
-			let newLogoSize = 80 - (scroll * 4) / 10;
-
-			if (newLogoSize < oldLogoSize) {
-				if (newLogoSize > 40) {
-					setLogoSize(newLogoSize);
-					setOldLogoSize(newLogoSize);
-					setStayLogo(false);
-				} else {
-					setStayLogo(true);
-				}
-			} else {
-				setLogoSize(newLogoSize);
-				setStayLogo(false);
-			}
+		const update = () => {
+			const scroll = Math.max(0, window.scrollY);
+			logoRef.current?.style.setProperty("--logo-scroll", scroll);
+			setDocked(scroll >= LOGO_DOCK_SCROLL);
 		};
 
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, [logoSize, oldLogoSize]);
+		update();
+		window.addEventListener("scroll", update, { passive: true });
+		return () => window.removeEventListener("scroll", update);
+	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "home");
-
-	const logoStyle = {
-		display: "flex",
-		position: stayLogo ? "fixed" : "relative",
-		top: stayLogo ? "3vh" : "auto",
-		zIndex: 999,
-		border: stayLogo ? "1px solid var(--bg)" : "none",
-		borderRadius: stayLogo ? "50%" : "none",
-		boxShadow: stayLogo ? "0px 4px 10px var(--shadow-strong)" : "none",
-	};
 
 	return (
 		<React.Fragment>
@@ -83,8 +68,11 @@ const Homepage = () => {
 				<NavBar active="home" />
 				<div className="content-wrapper">
 					<div className="homepage-logo-container">
-						<div style={logoStyle}>
-							<Logo width={logoSize} link={false} />
+						<div
+							ref={logoRef}
+							className={`header-logo home-logo ${docked ? "is-docked" : ""}`}
+						>
+							<Logo link={false} />
 						</div>
 					</div>
 
