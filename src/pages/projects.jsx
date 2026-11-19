@@ -56,7 +56,7 @@ const Projects = () => {
 						</div>
 
 						<div className="projects-list">
-							<AllProjects />
+							<AllProjects filterable />
 						</div>
 					</div>
 					<div className="page-footer">
