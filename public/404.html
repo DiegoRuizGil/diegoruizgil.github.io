@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Diego Ruiz Gil - Portfolio</title>
+		<script>
+			// GitHub Pages only serves real files, so a direct visit to a route
+			// like /articles/my-post lands here. Redirect to the app's index.html
+			// keeping the path in the query string; index.html restores it.
+			// (Based on rafgraph/spa-github-pages. The site lives at the domain
+			// root, so no path segments are kept.)
+			var pathSegmentsToKeep = 0;
+			var l = window.location;
+			l.replace(
+				l.protocol +
+					"//" +
+					l.hostname +
+					(l.port ? ":" + l.port : "") +
+					l.pathname
+						.split("/")
+						.slice(0, 1 + pathSegmentsToKeep)
+						.join("/") +
+					"/?/" +
+					l.pathname
+						.slice(1)
+						.split("/")
+						.slice(pathSegmentsToKeep)
+						.join("/")
+						.replace(/&/g, "~and~") +
+					(l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+					l.hash
+			);
+		</script>
+	</head>
+	<body></body>
+</html>

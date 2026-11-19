@@ -16,7 +16,7 @@ const SEO = [
 	{
 		page: "articles",
 		description:
-			"Chronological collection of my long-form thoughts on programming, leadership, product design, and more.",
+			"Step-by-step write-ups of the projects I build and the topics I explore: Unity, shaders, gameplay systems and software architecture.",
 		keywords: ["Tharindu", "Tharindu N", "Tharindu Nayanajith"],
 	},
 
