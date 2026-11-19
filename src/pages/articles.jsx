@@ -64,8 +64,7 @@ const Articles = () => {
 										My first article is on its way
 									</div>
 									<p>
-										I’m working on a step-by-step write-up of my current Unity
-										project. Check back soon, or take a look at my{" "}
+										Check back soon, or take a look at my{" "}
 										<Link to="/projects">projects</Link> in the meantime.
 									</p>
 								</div>

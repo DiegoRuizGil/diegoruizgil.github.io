@@ -115,9 +115,10 @@ const ProjectModal = ({ project, onClose, onOpenProject }) => {
 				role="dialog"
 				aria-modal="true"
 				aria-label={title}
-				ref={scrollRef}
 				onClick={(e) => e.stopPropagation()}
 			>
+				{/* The frame clips to the rounded corners; only this inner part scrolls. */}
+				<div className="modal-scroll" ref={scrollRef}>
 				<button
 					type="button"
 					className="modal-close"
@@ -248,6 +249,7 @@ const ProjectModal = ({ project, onClose, onOpenProject }) => {
 							</ul>
 						</Section>
 					)}
+				</div>
 				</div>
 			</div>
 		</div>

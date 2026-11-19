@@ -22,8 +22,47 @@
 	width: 100%;
 	max-width: 780px;
 	max-height: 90vh;
-	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden; /* clips everything to the rounded corners */
 	box-shadow: 0 12px 40px var(--shadow-strong);
+}
+
+/* Only this inner part scrolls, so the scrollbar lives inside the frame. */
+.modal-scroll {
+	flex: 1;
+	min-height: 0;
+	overflow-y: auto;
+}
+
+.modal-scroll::-webkit-scrollbar {
+	width: 14px;
+}
+
+/* Margin keeps the track away from the rounded corners. */
+.modal-scroll::-webkit-scrollbar-track {
+	margin: 16px 0;
+	background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-thumb);
+	background-clip: padding-box;
+	border: 4px solid transparent;
+	border-radius: 999px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+	background-color: var(--scrollbar-thumb-hover);
+	background-clip: padding-box;
+}
+
+/* Browsers without ::-webkit-scrollbar (Firefox). */
+@supports not selector(::-webkit-scrollbar) {
+	.modal-scroll {
+		scrollbar-width: thin;
+		scrollbar-color: var(--scrollbar-thumb) transparent;
+	}
 }
 
 .modal-close {
